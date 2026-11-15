@@ -1,0 +1,321 @@
+practitioner_id,practitioner_name,specialty,quarter,case_volume,chart_deficiency_rate,complaint_rate,complication_rate
+DR-101,Elizabeth Smith,Orthopedic Surgery,2024Q1,100,9.7,1.0,2.4
+DR-101,Elizabeth Smith,Orthopedic Surgery,2024Q2,112,8.6,2.4,3.2
+DR-101,Elizabeth Smith,Orthopedic Surgery,2024Q3,103,7.4,1.9,4.6
+DR-101,Elizabeth Smith,Orthopedic Surgery,2024Q4,119,9.9,2.8,4.2
+DR-101,Elizabeth Smith,Orthopedic Surgery,2025Q1,114,13.0,2.5,5.4
+DR-101,Elizabeth Smith,Orthopedic Surgery,2025Q2,119,14.9,3.0,5.3
+DR-101,Elizabeth Smith,Orthopedic Surgery,2025Q3,103,15.5,3.8,6.7
+DR-101,Elizabeth Smith,Orthopedic Surgery,2025Q4,120,16.9,4.5,7.5
+DR-102,Matthew Walker,Radiology,2024Q1,113,3.5,1.2,2.6
+DR-102,Matthew Walker,Radiology,2024Q2,100,6.5,1.7,2.1
+DR-102,Matthew Walker,Radiology,2024Q3,116,10.2,2.3,3.8
+DR-102,Matthew Walker,Radiology,2024Q4,100,11.8,2.5,3.8
+DR-102,Matthew Walker,Radiology,2025Q1,114,10.7,3.7,6.0
+DR-102,Matthew Walker,Radiology,2025Q2,94,17.8,3.7,4.9
+DR-102,Matthew Walker,Radiology,2025Q3,94,11.4,4.0,5.7
+DR-102,Matthew Walker,Radiology,2025Q4,106,16.7,3.9,6.8
+DR-103,Jennifer Anderson,Emergency Medicine,2024Q1,127,7.6,0.9,2.9
+DR-103,Jennifer Anderson,Emergency Medicine,2024Q2,141,7.2,1.4,2.5
+DR-103,Jennifer Anderson,Emergency Medicine,2024Q3,147,6.0,0.5,2.2
+DR-103,Jennifer Anderson,Emergency Medicine,2024Q4,127,4.0,0.8,3.1
+DR-103,Jennifer Anderson,Emergency Medicine,2025Q1,132,6.5,1.2,1.2
+DR-103,Jennifer Anderson,Emergency Medicine,2025Q2,143,5.4,1.0,2.6
+DR-103,Jennifer Anderson,Emergency Medicine,2025Q3,133,14.2,3.0,5.3
+DR-103,Jennifer Anderson,Emergency Medicine,2025Q4,128,14.8,4.2,5.5
+DR-104,Matthew Lewis,Orthopedic Surgery,2024Q1,93,13.5,3.3,4.7
+DR-104,Matthew Lewis,Orthopedic Surgery,2024Q2,98,13.3,3.1,4.4
+DR-104,Matthew Lewis,Orthopedic Surgery,2024Q3,93,12.2,2.2,5.6
+DR-104,Matthew Lewis,Orthopedic Surgery,2024Q4,109,13.8,3.7,5.8
+DR-104,Matthew Lewis,Orthopedic Surgery,2025Q1,98,14.0,3.5,5.9
+DR-104,Matthew Lewis,Orthopedic Surgery,2025Q2,96,12.4,2.0,6.8
+DR-104,Matthew Lewis,Orthopedic Surgery,2025Q3,107,13.2,3.8,6.2
+DR-104,Matthew Lewis,Orthopedic Surgery,2025Q4,106,14.1,2.1,6.0
+DR-105,Daniel Miller,Cardiology,2024Q1,126,10.2,2.5,4.2
+DR-105,Daniel Miller,Cardiology,2024Q2,125,15.0,2.4,5.0
+DR-105,Daniel Miller,Cardiology,2024Q3,129,12.8,3.9,4.5
+DR-105,Daniel Miller,Cardiology,2024Q4,125,11.1,3.4,4.7
+DR-105,Daniel Miller,Cardiology,2025Q1,136,7.3,1.4,3.5
+DR-105,Daniel Miller,Cardiology,2025Q2,138,6.2,2.0,2.9
+DR-105,Daniel Miller,Cardiology,2025Q3,145,6.5,1.7,3.1
+DR-105,Daniel Miller,Cardiology,2025Q4,137,6.9,2.3,2.4
+DR-106,Mary Davis,Pediatrics,2024Q1,9,16.4,7.6,8.7
+DR-106,Mary Davis,Pediatrics,2024Q2,9,15.8,5.4,8.8
+DR-106,Mary Davis,Pediatrics,2024Q3,5,14.0,5.6,4.5
+DR-106,Mary Davis,Pediatrics,2024Q4,7,19.6,7.9,1.0
+DR-106,Mary Davis,Pediatrics,2025Q1,8,14.7,2.9,6.1
+DR-106,Mary Davis,Pediatrics,2025Q2,9,12.9,3.8,11.1
+DR-106,Mary Davis,Pediatrics,2025Q3,4,21.6,9.2,0
+DR-106,Mary Davis,Pediatrics,2025Q4,5,16.1,8.7,7.4
+DR-107,Nancy Garcia,Emergency Medicine,2024Q1,142,7.2,0.7,2.5
+DR-107,Nancy Garcia,Emergency Medicine,2024Q2,134,6.6,0.2,2.5
+DR-107,Nancy Garcia,Emergency Medicine,2024Q3,130,4.9,0.8,0.3
+DR-107,Nancy Garcia,Emergency Medicine,2024Q4,141,4.8,0.7,2.8
+DR-107,Nancy Garcia,Emergency Medicine,2025Q1,143,4.2,1.7,2.7
+DR-107,Nancy Garcia,Emergency Medicine,2025Q2,121,8.0,2.1,1.4
+DR-107,Nancy Garcia,Emergency Medicine,2025Q3,127,5.5,1.8,2.6
+DR-107,Nancy Garcia,Emergency Medicine,2025Q4,135,8.6,1.5,2.6
+DR-108,Robert Lee,Orthopedic Surgery,2024Q1,101,8.6,1.2,2.3
+DR-108,Robert Lee,Orthopedic Surgery,2024Q2,105,6.6,0.8,3.1
+DR-108,Robert Lee,Orthopedic Surgery,2024Q3,103,4.3,1.4,2.8
+DR-108,Robert Lee,Orthopedic Surgery,2024Q4,83,5.1,1.7,2.3
+DR-108,Robert Lee,Orthopedic Surgery,2025Q1,103,4.2,0.1,1.9
+DR-108,Robert Lee,Orthopedic Surgery,2025Q2,87,4.8,1.4,2.9
+DR-108,Robert Lee,Orthopedic Surgery,2025Q3,96,4.4,1.4,1.7
+DR-108,Robert Lee,Orthopedic Surgery,2025Q4,83,5.3,2.2,2.9
+DR-109,Jennifer King,Pediatrics,2024Q1,84,7.0,1.6,2.5
+DR-109,Jennifer King,Pediatrics,2024Q2,74,5.0,1.2,2.6
+DR-109,Jennifer King,Pediatrics,2024Q3,90,5.0,1.6,2.7
+DR-109,Jennifer King,Pediatrics,2024Q4,72,6.7,1.6,3.0
+DR-109,Jennifer King,Pediatrics,2025Q1,85,6.7,0.8,1.4
+DR-109,Jennifer King,Pediatrics,2025Q2,81,5.3,0.9,2.7
+DR-109,Jennifer King,Pediatrics,2025Q3,75,4.5,0.8,2.5
+DR-109,Jennifer King,Pediatrics,2025Q4,85,5.5,1.5,2.7
+DR-110,William Wilson,Emergency Medicine,2024Q1,92,8.0,1.0,1.5
+DR-110,William Wilson,Emergency Medicine,2024Q2,91,4.1,2.1,1.9
+DR-110,William Wilson,Emergency Medicine,2024Q3,92,2.7,1.2,3.1
+DR-110,William Wilson,Emergency Medicine,2024Q4,96,7.7,2.4,3.2
+DR-110,William Wilson,Emergency Medicine,2025Q1,105,3.2,1.2,2.4
+DR-110,William Wilson,Emergency Medicine,2025Q2,98,5.0,1.4,2.7
+DR-110,William Wilson,Emergency Medicine,2025Q3,90,1.8,0.6,2.9
+DR-110,William Wilson,Emergency Medicine,2025Q4,106,6.4,1.5,0.8
+DR-111,Barbara Moore,Neurology,2024Q1,78,6.8,1.0,2.8
+DR-111,Barbara Moore,Neurology,2024Q2,77,7.0,2.2,2.5
+DR-111,Barbara Moore,Neurology,2024Q3,66,8.2,0.9,2.2
+DR-111,Barbara Moore,Neurology,2024Q4,76,7.5,1.1,2.5
+DR-111,Barbara Moore,Neurology,2025Q1,80,7.0,1.2,2.7
+DR-111,Barbara Moore,Neurology,2025Q2,71,5.0,1.9,2.6
+DR-111,Barbara Moore,Neurology,2025Q3,84,6.6,1.1,2.9
+DR-111,Barbara Moore,Neurology,2025Q4,75,3.7,1.4,2.2
+DR-112,Daniel Garcia,Pediatrics,2024Q1,91,6.3,1.1,2.2
+DR-112,Daniel Garcia,Pediatrics,2024Q2,89,7.6,1.4,2.9
+DR-112,Daniel Garcia,Pediatrics,2024Q3,89,7.0,0.3,3.3
+DR-112,Daniel Garcia,Pediatrics,2024Q4,70,5.8,1.5,2.4
+DR-112,Daniel Garcia,Pediatrics,2025Q1,79,3.4,1.9,2.9
+DR-112,Daniel Garcia,Pediatrics,2025Q2,81,8.0,0.6,2.0
+DR-112,Daniel Garcia,Pediatrics,2025Q3,79,4.9,0.7,3.2
+DR-112,Daniel Garcia,Pediatrics,2025Q4,69,4.6,1.6,3.2
+DR-113,Mary White,OB/GYN,2024Q1,60,4.4,2.1,1.7
+DR-113,Mary White,OB/GYN,2024Q2,67,3.3,1.4,3.3
+DR-113,Mary White,OB/GYN,2024Q3,75,5.5,1.5,2.0
+DR-113,Mary White,OB/GYN,2024Q4,59,8.0,2.4,2.1
+DR-113,Mary White,OB/GYN,2025Q1,67,4.6,0.7,2.8
+DR-113,Mary White,OB/GYN,2025Q2,68,5.7,1.7,2.2
+DR-113,Mary White,OB/GYN,2025Q3,59,6.5,1.6,3.5
+DR-113,Mary White,OB/GYN,2025Q4,53,6.4,2.2,2.8
+DR-114,James Anderson,Pediatrics,2024Q1,92,5.6,1.9,1.4
+DR-114,James Anderson,Pediatrics,2024Q2,93,5.5,0.8,1.2
+DR-114,James Anderson,Pediatrics,2024Q3,85,6.5,1.6,2.0
+DR-114,James Anderson,Pediatrics,2024Q4,95,4.3,0.8,3.6
+DR-114,James Anderson,Pediatrics,2025Q1,85,8.5,1.5,2.2
+DR-114,James Anderson,Pediatrics,2025Q2,97,6.9,1.9,2.6
+DR-114,James Anderson,Pediatrics,2025Q3,94,7.1,1.0,3.5
+DR-114,James Anderson,Pediatrics,2025Q4,104,9.6,2.0,2.5
+DR-115,Elizabeth Walker,Neurology,2024Q1,104,4.8,1.6,2.2
+DR-115,Elizabeth Walker,Neurology,2024Q2,92,4.0,2.4,3.2
+DR-115,Elizabeth Walker,Neurology,2024Q3,96,6.8,2.0,3.4
+DR-115,Elizabeth Walker,Neurology,2024Q4,91,1.4,2.0,1.9
+DR-115,Elizabeth Walker,Neurology,2025Q1,107,4.8,1.5,2.7
+DR-115,Elizabeth Walker,Neurology,2025Q2,109,6.2,0.6,2.5
+DR-115,Elizabeth Walker,Neurology,2025Q3,109,6.4,1.3,2.8
+DR-115,Elizabeth Walker,Neurology,2025Q4,97,5.7,0.8,2.6
+DR-116,Karen Anderson,OB/GYN,2024Q1,128,7.6,1.5,3.4
+DR-116,Karen Anderson,OB/GYN,2024Q2,133,5.1,1.7,1.8
+DR-116,Karen Anderson,OB/GYN,2024Q3,138,7.0,1.0,4.1
+DR-116,Karen Anderson,OB/GYN,2024Q4,117,6.8,2.3,2.0
+DR-116,Karen Anderson,OB/GYN,2025Q1,119,5.9,0.9,3.2
+DR-116,Karen Anderson,OB/GYN,2025Q2,124,4.0,0.8,1.2
+DR-116,Karen Anderson,OB/GYN,2025Q3,121,5.6,0.9,2.6
+DR-116,Karen Anderson,OB/GYN,2025Q4,132,3.5,1.8,3.2
+DR-117,William Williams,Family Medicine,2024Q1,91,5.1,1.5,2.8
+DR-117,William Williams,Family Medicine,2024Q2,107,4.5,1.5,1.6
+DR-117,William Williams,Family Medicine,2024Q3,98,6.9,1.3,1.8
+DR-117,William Williams,Family Medicine,2024Q4,113,5.7,0,3.3
+DR-117,William Williams,Family Medicine,2025Q1,103,7.2,0.9,3.1
+DR-117,William Williams,Family Medicine,2025Q2,113,5.0,1.2,3.7
+DR-117,William Williams,Family Medicine,2025Q3,101,7.6,1.1,2.7
+DR-117,William Williams,Family Medicine,2025Q4,98,5.0,1.6,1.3
+DR-118,Patricia Johnson,OB/GYN,2024Q1,84,5.3,1.5,2.4
+DR-118,Patricia Johnson,OB/GYN,2024Q2,99,6.4,1.6,1.8
+DR-118,Patricia Johnson,OB/GYN,2024Q3,76,9.6,0.7,2.9
+DR-118,Patricia Johnson,OB/GYN,2024Q4,88,5.0,1.0,2.9
+DR-118,Patricia Johnson,OB/GYN,2025Q1,76,7.2,1.6,2.2
+DR-118,Patricia Johnson,OB/GYN,2025Q2,92,6.2,1.3,3.2
+DR-118,Patricia Johnson,OB/GYN,2025Q3,78,3.6,0.6,3.5
+DR-118,Patricia Johnson,OB/GYN,2025Q4,96,7.0,1.4,2.2
+DR-119,Daniel Brown,Orthopedic Surgery,2024Q1,131,5.5,0.9,1.3
+DR-119,Daniel Brown,Orthopedic Surgery,2024Q2,111,4.4,1.2,2.7
+DR-119,Daniel Brown,Orthopedic Surgery,2024Q3,124,6.5,1.2,1.2
+DR-119,Daniel Brown,Orthopedic Surgery,2024Q4,132,6.9,1.4,3.8
+DR-119,Daniel Brown,Orthopedic Surgery,2025Q1,119,6.5,1.2,2.0
+DR-119,Daniel Brown,Orthopedic Surgery,2025Q2,117,6.9,1.7,2.9
+DR-119,Daniel Brown,Orthopedic Surgery,2025Q3,117,4.4,2.0,1.7
+DR-119,Daniel Brown,Orthopedic Surgery,2025Q4,123,3.4,0.8,3.8
+DR-120,Daniel Nguyen,Orthopedic Surgery,2024Q1,82,5.5,1.1,2.7
+DR-120,Daniel Nguyen,Orthopedic Surgery,2024Q2,85,5.9,1.6,4.2
+DR-120,Daniel Nguyen,Orthopedic Surgery,2024Q3,74,5.6,0.9,2.2
+DR-120,Daniel Nguyen,Orthopedic Surgery,2024Q4,87,5.2,1.2,3.0
+DR-120,Daniel Nguyen,Orthopedic Surgery,2025Q1,86,3.2,0.8,1.3
+DR-120,Daniel Nguyen,Orthopedic Surgery,2025Q2,87,8.7,1.7,3.9
+DR-120,Daniel Nguyen,Orthopedic Surgery,2025Q3,94,6.9,0.3,1.6
+DR-120,Daniel Nguyen,Orthopedic Surgery,2025Q4,95,5.7,0.9,3.4
+DR-121,Barbara Robinson,Pediatrics,2024Q1,115,6.5,0.7,1.7
+DR-121,Barbara Robinson,Pediatrics,2024Q2,117,4.7,1.1,2.0
+DR-121,Barbara Robinson,Pediatrics,2024Q3,116,6.6,1.8,1.6
+DR-121,Barbara Robinson,Pediatrics,2024Q4,106,8.0,1.2,3.1
+DR-121,Barbara Robinson,Pediatrics,2025Q1,111,5.0,1.1,3.0
+DR-121,Barbara Robinson,Pediatrics,2025Q2,115,2.0,1.3,2.7
+DR-121,Barbara Robinson,Pediatrics,2025Q3,100,6.5,1.1,1.4
+DR-121,Barbara Robinson,Pediatrics,2025Q4,119,4.6,1.6,3.6
+DR-122,Patricia Davis,Cardiology,2024Q1,75,7.7,0.7,3.3
+DR-122,Patricia Davis,Cardiology,2024Q2,84,7.4,1.7,2.7
+DR-122,Patricia Davis,Cardiology,2024Q3,81,4.1,1.5,1.0
+DR-122,Patricia Davis,Cardiology,2024Q4,81,6.4,0.4,2.7
+DR-122,Patricia Davis,Cardiology,2025Q1,77,4.6,0.7,1.4
+DR-122,Patricia Davis,Cardiology,2025Q2,81,6.3,1.3,1.8
+DR-122,Patricia Davis,Cardiology,2025Q3,80,7.0,2.0,3.8
+DR-122,Patricia Davis,Cardiology,2025Q4,80,8.2,1.1,2.7
+DR-123,Patricia Martinez,Radiology,2024Q1,78,7.4,1.4,2.3
+DR-123,Patricia Martinez,Radiology,2024Q2,91,7.6,1.4,3.1
+DR-123,Patricia Martinez,Radiology,2024Q3,77,4.3,1.1,2.7
+DR-123,Patricia Martinez,Radiology,2024Q4,85,7.3,1.6,3.4
+DR-123,Patricia Martinez,Radiology,2025Q1,92,6.5,0.9,1.6
+DR-123,Patricia Martinez,Radiology,2025Q2,75,6.8,1.4,1.0
+DR-123,Patricia Martinez,Radiology,2025Q3,91,7.7,1.1,2.8
+DR-123,Patricia Martinez,Radiology,2025Q4,87,7.2,0.5,1.8
+DR-124,David Young,Radiology,2024Q1,89,9.0,1.8,4.2
+DR-124,David Young,Radiology,2024Q2,76,7.1,1.1,4.5
+DR-124,David Young,Radiology,2024Q3,81,5.7,1.7,3.6
+DR-124,David Young,Radiology,2024Q4,83,5.0,1.7,1.6
+DR-124,David Young,Radiology,2025Q1,79,8.2,1.5,2.8
+DR-124,David Young,Radiology,2025Q2,86,4.8,1.1,0.2
+DR-124,David Young,Radiology,2025Q3,76,4.0,0.8,1.6
+DR-124,David Young,Radiology,2025Q4,73,5.6,1.0,2.8
+DR-125,Barbara Harris,Anesthesiology,2024Q1,68,4.6,1.3,2.0
+DR-125,Barbara Harris,Anesthesiology,2024Q2,57,4.2,1.4,3.1
+DR-125,Barbara Harris,Anesthesiology,2024Q3,72,9.0,1.0,0.9
+DR-125,Barbara Harris,Anesthesiology,2024Q4,58,5.5,1.2,2.7
+DR-125,Barbara Harris,Anesthesiology,2025Q1,71,5.4,1.0,3.9
+DR-125,Barbara Harris,Anesthesiology,2025Q2,74,7.3,0.9,1.0
+DR-125,Barbara Harris,Anesthesiology,2025Q3,66,8.7,1.3,2.3
+DR-125,Barbara Harris,Anesthesiology,2025Q4,69,5.4,1.5,2.6
+DR-126,James Rodriguez,Emergency Medicine,2024Q1,91,5.5,1.4,1.6
+DR-126,James Rodriguez,Emergency Medicine,2024Q2,77,6.4,0.9,2.6
+DR-126,James Rodriguez,Emergency Medicine,2024Q3,88,6.9,0.7,2.3
+DR-126,James Rodriguez,Emergency Medicine,2024Q4,69,8.0,0.7,2.8
+DR-126,James Rodriguez,Emergency Medicine,2025Q1,83,7.0,1.6,1.8
+DR-126,James Rodriguez,Emergency Medicine,2025Q2,68,5.6,1.3,3.4
+DR-126,James Rodriguez,Emergency Medicine,2025Q3,79,6.8,1.2,1.4
+DR-126,James Rodriguez,Emergency Medicine,2025Q4,89,6.7,1.1,1.0
+DR-127,Elizabeth Wright,General Surgery,2024Q1,103,6.5,1.1,3.0
+DR-127,Elizabeth Wright,General Surgery,2024Q2,116,3.1,2.0,2.7
+DR-127,Elizabeth Wright,General Surgery,2024Q3,120,6.5,1.3,2.8
+DR-127,Elizabeth Wright,General Surgery,2024Q4,99,7.0,0.7,3.3
+DR-127,Elizabeth Wright,General Surgery,2025Q1,101,5.5,1.7,3.5
+DR-127,Elizabeth Wright,General Surgery,2025Q2,108,5.2,1.1,2.3
+DR-127,Elizabeth Wright,General Surgery,2025Q3,123,7.3,1.1,1.8
+DR-127,Elizabeth Wright,General Surgery,2025Q4,105,7.3,1.0,3.3
+DR-128,Daniel Scott,Emergency Medicine,2024Q1,130,5.3,1.5,3.3
+DR-128,Daniel Scott,Emergency Medicine,2024Q2,129,6.9,0.9,2.0
+DR-128,Daniel Scott,Emergency Medicine,2024Q3,120,6.8,1.5,3.0
+DR-128,Daniel Scott,Emergency Medicine,2024Q4,119,6.2,1.1,2.6
+DR-128,Daniel Scott,Emergency Medicine,2025Q1,119,5.4,1.0,4.5
+DR-128,Daniel Scott,Emergency Medicine,2025Q2,127,5.1,1.2,3.2
+DR-128,Daniel Scott,Emergency Medicine,2025Q3,122,5.7,0.8,2.3
+DR-128,Daniel Scott,Emergency Medicine,2025Q4,118,4.0,1.1,3.0
+DR-129,Charles Harris,Emergency Medicine,2024Q1,63,3.8,0.9,2.6
+DR-129,Charles Harris,Emergency Medicine,2024Q2,53,6.2,1.4,3.3
+DR-129,Charles Harris,Emergency Medicine,2024Q3,65,6.3,0.6,2.5
+DR-129,Charles Harris,Emergency Medicine,2024Q4,67,4.8,0.9,1.7
+DR-129,Charles Harris,Emergency Medicine,2025Q1,69,4.0,1.2,1.8
+DR-129,Charles Harris,Emergency Medicine,2025Q2,55,5.8,0.9,3.7
+DR-129,Charles Harris,Emergency Medicine,2025Q3,54,6.4,0,2.9
+DR-129,Charles Harris,Emergency Medicine,2025Q4,53,7.4,1.7,2.1
+DR-130,William Jones,Pediatrics,2024Q1,138,4.4,0.6,3.4
+DR-130,William Jones,Pediatrics,2024Q2,135,5.7,0.6,2.6
+DR-130,William Jones,Pediatrics,2024Q3,146,8.6,0.8,2.8
+DR-130,William Jones,Pediatrics,2024Q4,146,7.1,0.4,2.9
+DR-130,William Jones,Pediatrics,2025Q1,148,6.2,1.3,1.9
+DR-130,William Jones,Pediatrics,2025Q2,146,3.9,0.4,2.4
+DR-130,William Jones,Pediatrics,2025Q3,149,2.8,1.3,3.4
+DR-130,William Jones,Pediatrics,2025Q4,137,2.1,0.9,2.1
+DR-131,Sarah Garcia,Neurology,2024Q1,111,6.4,1.8,2.5
+DR-131,Sarah Garcia,Neurology,2024Q2,115,6.7,1.9,2.1
+DR-131,Sarah Garcia,Neurology,2024Q3,132,5.6,0.5,2.2
+DR-131,Sarah Garcia,Neurology,2024Q4,125,5.2,1.5,1.9
+DR-131,Sarah Garcia,Neurology,2025Q1,126,8.8,1.5,2.3
+DR-131,Sarah Garcia,Neurology,2025Q2,116,3.3,1.1,2.9
+DR-131,Sarah Garcia,Neurology,2025Q3,116,6.6,2.6,3.4
+DR-131,Sarah Garcia,Neurology,2025Q4,129,8.0,2.3,2.1
+DR-132,Thomas Anderson,Cardiology,2024Q1,108,7.9,1.8,2.4
+DR-132,Thomas Anderson,Cardiology,2024Q2,105,3.0,1.8,3.2
+DR-132,Thomas Anderson,Cardiology,2024Q3,120,5.5,1.0,2.5
+DR-132,Thomas Anderson,Cardiology,2024Q4,113,7.9,1.6,3.3
+DR-132,Thomas Anderson,Cardiology,2025Q1,110,6.9,1.3,3.6
+DR-132,Thomas Anderson,Cardiology,2025Q2,101,5.6,1.3,2.5
+DR-132,Thomas Anderson,Cardiology,2025Q3,106,6.7,1.1,2.4
+DR-132,Thomas Anderson,Cardiology,2025Q4,109,6.0,0.9,2.4
+DR-133,Thomas Allen,Orthopedic Surgery,2024Q1,49,3.2,1.2,1.9
+DR-133,Thomas Allen,Orthopedic Surgery,2024Q2,65,3.8,0.9,2.4
+DR-133,Thomas Allen,Orthopedic Surgery,2024Q3,50,6.9,1.6,2.7
+DR-133,Thomas Allen,Orthopedic Surgery,2024Q4,69,6.7,1.1,2.2
+DR-133,Thomas Allen,Orthopedic Surgery,2025Q1,58,4.8,1.6,3.2
+DR-133,Thomas Allen,Orthopedic Surgery,2025Q2,63,4.9,0.6,1.5
+DR-133,Thomas Allen,Orthopedic Surgery,2025Q3,61,4.2,2.0,3.7
+DR-133,Thomas Allen,Orthopedic Surgery,2025Q4,69,9.0,1.3,2.0
+DR-134,Barbara White,General Surgery,2024Q1,66,4.8,1.3,2.2
+DR-134,Barbara White,General Surgery,2024Q2,68,7.1,2.1,1.7
+DR-134,Barbara White,General Surgery,2024Q3,58,7.1,1.9,2.6
+DR-134,Barbara White,General Surgery,2024Q4,72,7.1,1.4,1.9
+DR-134,Barbara White,General Surgery,2025Q1,79,3.6,1.1,1.9
+DR-134,Barbara White,General Surgery,2025Q2,79,7.7,1.6,2.0
+DR-134,Barbara White,General Surgery,2025Q3,61,6.5,1.3,4.0
+DR-134,Barbara White,General Surgery,2025Q4,60,6.9,1.0,1.7
+DR-135,Sarah Thompson,Cardiology,2024Q1,86,5.3,1.7,1.9
+DR-135,Sarah Thompson,Cardiology,2024Q2,96,6.0,0.6,2.6
+DR-135,Sarah Thompson,Cardiology,2024Q3,94,7.4,2.1,2.1
+DR-135,Sarah Thompson,Cardiology,2024Q4,93,5.2,1.1,3.6
+DR-135,Sarah Thompson,Cardiology,2025Q1,82,6.0,0.5,2.6
+DR-135,Sarah Thompson,Cardiology,2025Q2,93,7.5,1.4,2.9
+DR-135,Sarah Thompson,Cardiology,2025Q3,85,4.7,1.8,3.6
+DR-135,Sarah Thompson,Cardiology,2025Q4,99,5.5,1.7,2.6
+DR-136,Nancy Wright,Radiology,2024Q1,81,6.5,1.2,3.4
+DR-136,Nancy Wright,Radiology,2024Q2,74,4.3,2.0,3.3
+DR-136,Nancy Wright,Radiology,2024Q3,87,6.1,1.9,4.0
+DR-136,Nancy Wright,Radiology,2024Q4,80,6.1,2.1,2.5
+DR-136,Nancy Wright,Radiology,2025Q1,72,6.9,0.8,0.9
+DR-136,Nancy Wright,Radiology,2025Q2,70,6.4,1.8,2.3
+DR-136,Nancy Wright,Radiology,2025Q3,71,4.2,1.1,3.1
+DR-136,Nancy Wright,Radiology,2025Q4,68,3.5,1.5,2.8
+DR-137,Richard White,Cardiology,2024Q1,62,5.9,1.7,4.7
+DR-137,Richard White,Cardiology,2024Q2,63,6.7,1.3,2.8
+DR-137,Richard White,Cardiology,2024Q3,76,7.6,1.1,3.8
+DR-137,Richard White,Cardiology,2024Q4,64,8.0,1.3,2.0
+DR-137,Richard White,Cardiology,2025Q1,75,9.1,1.9,2.6
+DR-137,Richard White,Cardiology,2025Q2,65,8.6,1.3,2.1
+DR-137,Richard White,Cardiology,2025Q3,74,3.9,0.9,2.9
+DR-137,Richard White,Cardiology,2025Q4,62,7.1,0.9,2.3
+DR-138,Mary Taylor,Orthopedic Surgery,2024Q1,68,5.7,1.8,2.6
+DR-138,Mary Taylor,Orthopedic Surgery,2024Q2,82,2.8,0.8,2.5
+DR-138,Mary Taylor,Orthopedic Surgery,2024Q3,83,5.7,1.6,2.9
+DR-138,Mary Taylor,Orthopedic Surgery,2024Q4,68,4.2,1.1,2.1
+DR-138,Mary Taylor,Orthopedic Surgery,2025Q1,80,6.2,2.2,2.7
+DR-138,Mary Taylor,Orthopedic Surgery,2025Q2,84,7.3,1.5,3.0
+DR-138,Mary Taylor,Orthopedic Surgery,2025Q3,78,7.7,1.2,2.7
+DR-138,Mary Taylor,Orthopedic Surgery,2025Q4,82,3.1,1.9,1.9
+DR-139,Jennifer Jones,Family Medicine,2024Q1,115,5.0,1.5,2.4
+DR-139,Jennifer Jones,Family Medicine,2024Q2,129,5.1,1.0,1.9
+DR-139,Jennifer Jones,Family Medicine,2024Q3,137,8.3,1.6,2.2
+DR-139,Jennifer Jones,Family Medicine,2024Q4,128,5.3,1.7,3.8
+DR-139,Jennifer Jones,Family Medicine,2025Q1,124,4.3,1.5,3.7
+DR-139,Jennifer Jones,Family Medicine,2025Q2,119,4.8,1.6,3.1
+DR-139,Jennifer Jones,Family Medicine,2025Q3,119,7.7,1.1,2.5
+DR-139,Jennifer Jones,Family Medicine,2025Q4,127,4.9,0.6,1.7
+DR-140,Michael Lee,General Surgery,2024Q1,146,6.0,0.7,2.8
+DR-140,Michael Lee,General Surgery,2024Q2,128,4.9,0.8,3.1
+DR-140,Michael Lee,General Surgery,2024Q3,134,3.7,0,2.6
+DR-140,Michael Lee,General Surgery,2024Q4,144,6.9,1.1,2.4
+DR-140,Michael Lee,General Surgery,2025Q1,135,5.8,0.4,1.5
+DR-140,Michael Lee,General Surgery,2025Q2,132,7.0,1.3,3.7
+DR-140,Michael Lee,General Surgery,2025Q3,145,5.4,1.1,2.0
+DR-140,Michael Lee,General Surgery,2025Q4,128,5.0,1.0,2.1
