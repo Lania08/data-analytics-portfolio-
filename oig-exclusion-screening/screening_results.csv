@@ -1,0 +1,16 @@
+provider_id,provider_name,date_of_birth,specialty,result,match_score,matched_record,exclusion_type,exclusion_date
+PRV-1001,Karen Johnson,1985-12-25,Internal Medicine,"EXACT MATCH - excluded, escalate",100,"Karen Johnson, DOB 1985-12-25",1128a3 - Program-related conviction,2017-08-15
+PRV-1002,William Thompson,1966-12-23,Orthopedic Surgery,"EXACT MATCH - excluded, escalate",100,"William Thompson, DOB 1966-12-23",1128a1 - Fraud conviction,2025-06-15
+PRV-1003,Jason Miller,1957-04-17,Emergency Medicine,"EXACT MATCH - excluded, escalate",100,"Jason Miller, DOB 1957-04-17",1128b1 - License revocation or suspension,2016-08-15
+PRV-1004,Jennifer Wright,1986-03-28,Psychiatry,"EXACT MATCH - excluded, escalate",100,"Jennifer Wright, DOB 1986-03-28",1128b4 - False claims,2022-02-15
+PRV-1005,Nancy Gomez,1963-06-15,Internal Medicine,"EXACT MATCH - excluded, escalate",100,"Nancy Gomez, DOB 1963-06-15",1128b4 - False claims,2025-02-15
+PRV-1006,Andrew Williams,1994-07-01,Pediatrics,"EXACT MATCH - excluded, escalate",100,"Andrew Williams, DOB 1994-07-01",1128b4 - False claims,2021-06-15
+PRV-1007,Daniel Flores,1977-07-26,Cardiology,"EXACT MATCH - excluded, escalate",100,"Daniel Flores, DOB 1977-07-26",1128a3 - Program-related conviction,2025-01-15
+PRV-1008,Michael Williams,1981-11-04,Internal Medicine,"FUZZY MATCH - same person likely, review",,"Micheal Williams, DOB 1981-11-04",1128a3 - Program-related conviction,2024-02-15
+PRV-1009,Matthew Carter,1989-02-08,Cardiology,"FUZZY MATCH - same person likely, review",100.0,"Matthew Carter-Reyes, DOB 1989-02-08",1128b1 - License revocation or suspension,2022-07-15
+PRV-1010,Michelle Taylor,1994-06-21,Anesthesiology,"FUZZY MATCH - same person likely, review",95.5,"Michelle Taylo, DOB 1994-06-21",1128b1 - License revocation or suspension,2023-06-15
+PRV-1011,David Martin,1973-11-05,Internal Medicine,"FUZZY MATCH - same person likely, review",,"D. Martin, DOB 1973-11-05",1128b1 - License revocation or suspension,2020-07-15
+PRV-1012,Daniel Martinez,1995-09-18,Neurology,"EXACT MATCH - excluded, escalate",100,"Daniel Martinez, DOB 1995-09-18",1128a3 - Program-related conviction,2015-03-15
+PRV-1013,Lisa Davis,1987-08-12,General Surgery,"NAME SIMILARITY ONLY - DOB differs, review",100.0,"Lisa Davis, DOB 1970-01-01","1128b7 - Fraud, kickbacks, or other prohibited activities",2020-03-15
+PRV-1014,Kenneth Davis,1992-07-20,Anesthesiology,"NAME SIMILARITY ONLY - DOB differs, review",100.0,"Kenneth Davis, DOB 1970-01-01",1128a1 - Fraud conviction,2020-03-15
+PRV-1056,Michelle Williams,1981-05-18,Psychiatry,"NAME SIMILARITY ONLY - DOB differs, review",90.0,"Micheal Williams, DOB 1981-11-04",1128a3 - Program-related conviction,2024-02-15
