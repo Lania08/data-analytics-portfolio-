@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Credentialing Turnaround Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+    <style>
+      button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) { min-height: 2.25rem; }
+
+      :root {
+        --bg: #f4f6f5;
+        --surface: #ffffff;
+        --surface-2: #edf1ef;
+        --ink: #1b2421;
+        --muted: #5a6a64;
+        --faint: #84938d;
+        --line: #d9e0dc;
+        --accent: #0e7a6d;
+        --accent-ink: #0a5c53;
+        --accent-soft: #dcefe9;
+        --bar: #9db8b1;
+        --bar-soft: #c3d4cf;
+        --alert: #b23a1f;
+        --alert-soft: #f9e7e1;
+        --amber: #a86f10;
+        --amber-soft: #f7ecd4;
+        --shadow: 0 1px 2px rgba(20, 35, 30, .06), 0 4px 14px rgba(20, 35, 30, .05);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #10151a;
+          --surface: #182028;
+          --surface-2: #1f2931;
+          --ink: #e9eeeb;
+          --muted: #a3b1ab;
+          --faint: #75847e;
+          --line: #2b3742;
+          --accent: #2fbfa9;
+          --accent-ink: #5fd8c6;
+          --accent-soft: #14332e;
+          --bar: #54756d;
+          --bar-soft: #3c554f;
+          --alert: #f0866a;
+          --alert-soft: #3d211a;
+          --amber: #e0aa4e;
+          --amber-soft: #38300f;
+          --shadow: 0 1px 2px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25);
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "IBM Plex Sans", -apple-system, "Segoe UI", Roboto, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      .wrap { max-width: 1060px; margin: 0 auto; padding: 28px 18px 56px; }
+      .num { font-variant-numeric: tabular-nums; }
+
+      /* ---------- Header ---------- */
+      header.top { margin-bottom: 22px; }
+      .title-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+      h1 { font-size: clamp(1.55rem, 4.5vw, 2.15rem); line-height: 1.15; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
+      .sample-chip {
+        font-size: .78rem; font-weight: 600; color: var(--amber);
+        background: var(--amber-soft); border: 1px solid var(--amber);
+        border-radius: 999px; padding: 3px 10px; white-space: nowrap;
+      }
+      .lede { color: var(--muted); margin: 10px 0 0; max-width: 62ch; font-size: 1.02rem; }
+      .lede strong { color: var(--ink); }
+
+      /* ---------- KPI cards ---------- */
+      .kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 22px 0 14px; }
+      .kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px 12px; box-shadow: var(--shadow); }
+      .kpi .k-label { font-size: .8rem; font-weight: 600; color: var(--muted); margin: 0 0 4px; }
+      .kpi .k-value { font-size: 1.9rem; font-weight: 700; line-height: 1.05; margin: 0; }
+      .kpi .k-sub { font-size: .8rem; color: var(--faint); margin: 4px 0 0; }
+      .kpi.alert .k-value { color: var(--alert); }
+      .kpi.alert { border-color: var(--alert); }
+
+      /* ---------- Headline finding ---------- */
+      .headline {
+        background: var(--accent-soft); border: 1px solid var(--accent);
+        border-radius: 10px; padding: 16px 18px; margin: 0 0 26px;
+        display: flex; gap: 14px; align-items: flex-start;
+      }
+      .headline .big { font-size: 2rem; font-weight: 700; color: var(--accent-ink); line-height: 1; white-space: nowrap; padding-top: 2px; }
+      .headline p { margin: 0; }
+      .headline p strong { display: block; font-size: 1.05rem; margin-bottom: 2px; }
+      .headline p span { color: var(--muted); font-size: .95rem; }
+
+      /* ---------- Sections & chart cards ---------- */
+      section { margin: 0 0 26px; }
+      .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); padding: 20px 20px 14px; }
+      h2 { font-size: 1.18rem; margin: 0 0 4px; font-weight: 700; }
+      .card .sub { color: var(--muted); font-size: .92rem; margin: 0 0 14px; max-width: 68ch; }
+      .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+      .grid-2 > section { margin-bottom: 0; }
+      .two-col { display: grid; grid-template-columns: 1.15fr .85fr; gap: 14px; align-items: start; }
+      .two-col > section { margin-bottom: 0; }
+
+      svg.chart { width: 100%; height: auto; display: block; }
+      svg.chart text { font-family: "IBM Plex Sans", sans-serif; }
+      .axis-note { font-size: .78rem; color: var(--faint); margin: 8px 0 4px; }
+      .legend { display: flex; gap: 18px; flex-wrap: wrap; font-size: .85rem; color: var(--muted); margin: 0 0 10px; }
+      .legend .sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+
+      /* ---------- Findings ---------- */
+      .findings { list-style: none; margin: 4px 0 6px; padding: 0; counter-reset: f; }
+      .findings li { display: flex; gap: 14px; padding: 12px 0; border-top: 1px solid var(--line); }
+      .findings li:first-child { border-top: none; padding-top: 4px; }
+      .findings .n {
+        counter-increment: f; flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%;
+        background: var(--accent); color: #fff; font-weight: 700; font-size: .95rem;
+        display: flex; align-items: center; justify-content: center; margin-top: 2px;
+      }
+      @media (prefers-color-scheme: dark) { .findings .n { color: #0b1512; } }
+      .findings p { margin: 0; }
+      .findings p strong { display: block; margin-bottom: 1px; }
+      .findings p span { color: var(--muted); font-size: .95rem; }
+
+      /* ---------- Stuck table ---------- */
+      .table-tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+      .table-tools label { font-size: .9rem; font-weight: 600; color: var(--muted); }
+      .table-tools select {
+        font: inherit; font-size: .95rem; padding: 6px 10px; border-radius: 8px;
+        border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+      }
+      .table-tools .count { font-size: .88rem; color: var(--faint); margin-left: auto; }
+      table { width: 100%; border-collapse: collapse; font-size: .94rem; }
+      thead th {
+        text-align: left; font-size: .78rem; font-weight: 600; letter-spacing: .04em;
+        text-transform: uppercase; color: var(--muted);
+        padding: 8px 10px; border-bottom: 2px solid var(--line);
+      }
+      tbody td { padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+      tbody tr:last-child td { border-bottom: none; }
+      td.id, td.days { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .88rem; white-space: nowrap; }
+      td.days { font-weight: 600; color: var(--alert); text-align: right; }
+      th.days { text-align: right; }
+      .step-pill { display: inline-block; font-size: .8rem; font-weight: 600; border-radius: 999px; padding: 2px 9px; white-space: nowrap; }
+      .step-pill.review { background: var(--amber-soft); color: var(--amber); }
+      .step-pill.verify { background: var(--alert-soft); color: var(--alert); }
+      .step-pill.refs { background: var(--surface-2); color: var(--muted); }
+
+      footer.note { color: var(--faint); font-size: .85rem; border-top: 1px solid var(--line); padding-top: 14px; margin-top: 8px; }
+      footer.note p { margin: 0 0 6px; max-width: 75ch; }
+
+      /* ---------- Responsive ---------- */
+      @media (max-width: 860px) {
+        .kpis { grid-template-columns: repeat(3, 1fr); }
+        .grid-2, .two-col { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 560px) {
+        .kpis { grid-template-columns: repeat(2, 1fr); }
+        .kpi .k-value { font-size: 1.6rem; }
+        .headline { flex-direction: column; gap: 8px; }
+        .card { padding: 16px 14px 10px; }
+
+        /* Table becomes stacked cards */
+        table, tbody, tr, td { display: block; width: 100%; }
+        thead { display: none; }
+        tbody tr { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-bottom: 10px; background: var(--surface); }
+        tbody td { border-bottom: none; padding: 3px 0; display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+        tbody td::before { content: attr(data-label); font-size: .76rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--faint); flex: 0 0 auto; padding-top: 2px; }
+        td.provider { font-weight: 600; font-size: 1rem; }
+        td.provider::before { display: none; }
+        td.days { font-size: 1rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+
+      <header class="top">
+        <div class="title-row">
+          <h1>Credentialing Turnaround Dashboard</h1>
+          <span class="sample-chip">Synthetic sample data</span>
+        </div>
+        <p class="lede">How long hospital privileging applications take from receipt to decision — where they get stuck, which specialties wait longest, and which files need attention right now. Built from <strong>120 applications</strong>, <strong>620 workflow steps</strong>, and <strong>880 verification items</strong>.</p>
+      </header>
+
+      <!-- KPIs -->
+      <div class="kpis" role="group" aria-label="Key numbers">
+        <div class="kpi">
+          <p class="k-label">Total applications</p>
+          <p class="k-value num">120</p>
+          <p class="k-sub">Jan – Sep 2026 intake</p>
+        </div>
+        <div class="kpi">
+          <p class="k-label">Decided</p>
+          <p class="k-value num">83</p>
+          <p class="k-sub">Reached a decision</p>
+        </div>
+        <div class="kpi">
+          <p class="k-label">Still open</p>
+          <p class="k-value num">37</p>
+          <p class="k-sub">In progress right now</p>
+        </div>
+        <div class="kpi">
+          <p class="k-label">Avg. turnaround</p>
+          <p class="k-value num">80.8<span style="font-size:1rem;font-weight:600;"> days</span></p>
+          <p class="k-sub">Receipt to decision</p>
+        </div>
+        <div class="kpi alert">
+          <p class="k-label">Stuck 30+ days</p>
+          <p class="k-value num">15</p>
+          <p class="k-sub">In one step, need follow-up</p>
+        </div>
+      </div>
+
+      <!-- Headline finding -->
+      <div class="headline">
+        <div class="big num">35.8 days</div>
+        <p>
+          <strong>Primary-source verification is the bottleneck</strong>
+          <span>Applications spend an average of 35.8 days in primary-source verification — about <strong>6× longer</strong> than the next slowest step (peer references, 6.0 days). Everything else in the workflow moves in 6 days or less.</span>
+        </p>
+      </div>
+
+      <!-- Chart 1: workflow steps -->
+      <section class="card">
+        <h2>Average days in each workflow step</h2>
+        <p class="sub">Average days an application spends in each step before moving on. Verification alone accounts for more time than all other steps combined.</p>
+        <div id="chart-steps"></div>
+        <p class="axis-note">Based on completed steps. Primary-source verification: 104 completions, slowest single case 39 days.</p>
+      </section>
+
+      <div class="two-col">
+        <!-- Chart 3: verification items -->
+        <section class="card">
+          <h2>Slowest verification items</h2>
+          <p class="sub">Inside verification, one item does most of the damage: the <strong>State Medical License</strong> check takes 24.1 days to come back — over half of the whole verification wait.</p>
+          <div id="chart-items"></div>
+          <p class="axis-note">Average days to return, per item. 110 of each item requested; 2 of each still pending.</p>
+        </section>
+
+        <!-- Chart 5: aging -->
+        <section class="card">
+          <h2>Open queue by age</h2>
+          <p class="sub">How long the 37 still-open applications have been waiting, as of Oct 3, 2026. Most of the open queue is already 61–90 days old.</p>
+          <div id="chart-aging"></div>
+          <p class="axis-note">Ages measured from the date each application was received.</p>
+        </section>
+      </div>
+
+      <!-- Chart 2: specialty -->
+      <section class="card" style="margin-top:14px;">
+        <h2>Average turnaround by specialty</h2>
+        <p class="sub">Start-to-finish days for decided applications. OB/GYN waits the longest at 91.0 days; Family Medicine is fastest at 69.6 — a gap of about three weeks for the same process.</p>
+        <div id="chart-specialty"></div>
+      </section>
+
+      <!-- Chart 4: monthly volume -->
+      <section class="card">
+        <h2>Applications received vs. decided, by month</h2>
+        <p class="sub">Decisions lag intake by roughly two months — applications received in January and February weren't decided until March and April. The team cleared the backlog in May and June, deciding 43 applications against 10 received.</p>
+        <p class="legend">
+          <span><span class="sw" style="background:var(--accent)"></span>Received</span>
+          <span><span class="sw" style="background:var(--bar)"></span>Decided</span>
+        </p>
+        <div id="chart-monthly"></div>
+      </section>
+
+      <!-- Key findings -->
+      <section class="card">
+        <h2>Key findings</h2>
+        <ol class="findings">
+          <li>
+            <span class="n" aria-hidden="true">1</span>
+            <p><strong>Verification is the bottleneck</strong>
+            <span>Primary-source verification averages 35.8 days — about 6× the next slowest step. If you fix one thing in this process, it's this step.</span></p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">2</span>
+            <p><strong>One check causes most of the wait</strong>
+            <span>The State Medical License check is the slowest single verification item at 24.1 days on average. The NPDB query, by comparison, comes back in 4.5 days.</span></p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">3</span>
+            <p><strong>Specialty changes the wait by three weeks</strong>
+            <span>OB/GYN applications take the longest start to finish (91.0 days). Family Medicine is fastest at 69.6 days.</span></p>
+          </li>
+          <li>
+            <span class="n" aria-hidden="true">4</span>
+            <p><strong>15 applications are stuck and need attention</strong>
+            <span>Each has sat in one step for 30+ days. Most — 10 of the 15 — are waiting at Completeness Review, an early step in the process. The single longest wait is one file that has sat at Peer References for 95 days.</span></p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Stuck table -->
+      <section class="card">
+        <h2>Stuck right now — 30+ days in one step</h2>
+        <p class="sub">Every open application that has been sitting in its current step for more than 30 days, longest wait first. These are the files to chase.</p>
+        <div class="table-tools">
+          <label for="step-filter">Current step</label>
+          <select id="step-filter">
+            <option value="all">All steps (15)</option>
+            <option value="Completeness Review">Completeness Review (10)</option>
+            <option value="Primary-Source Verification">Primary-Source Verification (4)</option>
+            <option value="Peer References">Peer References (1)</option>
+          </select>
+          <span class="count num" id="row-count"></span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Application</th>
+              <th scope="col">Provider</th>
+              <th scope="col">Specialty</th>
+              <th scope="col">Current step</th>
+              <th scope="col" class="days">Days stuck</th>
+            </tr>
+          </thead>
+          <tbody id="stuck-body"></tbody>
+        </table>
+      </section>
+
+      <footer class="note">
+        <p><strong>About this data:</strong> All figures come from a synthetic (made-up) sample dataset built for a portfolio project — 120 fictional applications, 620 workflow steps, and 880 verification items. No real providers or patient information. Numbers were computed with SQL queries against the sample files.</p>
+        <p>Portfolio Project #1 — credentialing turnaround analysis. Open-queue ages as of Oct 3, 2026.</p>
+      </footer>
+
+    </div>
+
+    <script>
+      (function () {
+        var css = getComputedStyle(document.documentElement);
+        function v(name) { return css.getPropertyValue(name).trim(); }
+
+        /* ---------- Horizontal bar chart builder ---------- */
+        function hBarChart(elId, rows, opts) {
+          var el = document.getElementById(elId);
+          var max = opts.max;
+          var labelW = opts.labelW, barH = 26, gap = 10, valW = 58;
+          var W = 720, plotW = W - labelW - valW;
+          var H = rows.length * (barH + gap) - gap + 4;
+          var ink = v('--ink'), muted = v('--muted'), line = v('--line');
+          var s = '<svg class="chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + opts.aria + '">';
+          // gridlines at 0, 25%, 50%, 75%, 100% of max
+          for (var g = 0; g <= 4; g++) {
+            var gx = labelW + (plotW * g / 4);
+            s += '<line x1="' + gx + '" y1="0" x2="' + gx + '" y2="' + (H - 2) + '" stroke="' + line + '" stroke-width="1"/>';
+          }
+          rows.forEach(function (r, i) {
+            var y = i * (barH + gap);
+            var w = Math.max(2, plotW * r.value / max);
+            var fill = r.hot ? v('--alert') : (r.accent ? v('--accent') : v('--bar'));
+            s += '<text x="' + (labelW - 10) + '" y="' + (y + barH / 2 + 5) + '" text-anchor="end" font-size="13.5" fill="' + ink + '"' + (r.hot ? ' font-weight="600"' : '') + '>' + r.label + '</text>';
+            s += '<rect x="' + labelW + '" y="' + y + '" width="' + w + '" height="' + barH + '" rx="4" fill="' + fill + '"><title>' + r.label + ': ' + r.value.toFixed(1) + ' days</title></rect>';
+            s += '<text x="' + (labelW + w + 8) + '" y="' + (y + barH / 2 + 5) + '" font-size="13.5" font-weight="600" fill="' + (r.hot ? v('--alert') : ink) + '">' + r.value.toFixed(1) + '</text>';
+          });
+          s += '</svg>';
+          el.innerHTML = s;
+        }
+
+        /* Chart 1 — workflow steps */
+        hBarChart('chart-steps', [
+          { label: 'Primary-Source Verification', value: 35.8, hot: true },
+          { label: 'Peer References', value: 6.0 },
+          { label: 'Completeness Review', value: 5.0 },
+          { label: 'Committee Review', value: 5.0 },
+          { label: 'Privileging Decision', value: 3.0 },
+          { label: 'Application Received', value: 2.5 }
+        ], { max: 40, labelW: 242, aria: 'Bar chart of average days in each workflow step. Primary-Source Verification is by far the slowest at 35.8 days; all other steps take 6 days or less.' });
+
+        /* Chart 3 — verification items */
+        hBarChart('chart-items', [
+          { label: 'State Medical License', value: 24.1, hot: true },
+          { label: 'Malpractice Claims History', value: 17.9 },
+          { label: 'Education & Training', value: 15.5 },
+          { label: 'Board Certification', value: 14.0 },
+          { label: 'Peer Reference 2', value: 12.9 },
+          { label: 'Peer Reference 1', value: 12.0 },
+          { label: 'DEA Registration', value: 10.0 },
+          { label: 'NPDB Query', value: 4.5 }
+        ], { max: 27, labelW: 196, aria: 'Bar chart of average days for each verification item to return. State Medical License is slowest at 24.1 days; NPDB Query is fastest at 4.5 days.' });
+
+        /* Chart 2 — specialty */
+        hBarChart('chart-specialty', [
+          { label: 'OB/GYN', value: 91.0, hot: true },
+          { label: 'Radiology', value: 85.8 },
+          { label: 'Cardiology', value: 84.1 },
+          { label: 'Orthopedic Surgery', value: 84.0 },
+          { label: 'Anesthesiology', value: 84.0 },
+          { label: 'Neurology', value: 80.9 },
+          { label: 'General Surgery', value: 79.3 },
+          { label: 'Pediatrics', value: 74.3 },
+          { label: 'Emergency Medicine', value: 74.3 },
+          { label: 'Family Medicine', value: 69.6, accent: true }
+        ], { max: 100, labelW: 188, aria: 'Bar chart of average turnaround by specialty for decided applications. OB/GYN is slowest at 91.0 days; Family Medicine is fastest at 69.6 days.' });
+
+        /* Chart 5 — aging buckets (vertical bars) */
+        (function () {
+          var rows = [
+            { label: '0–30 days', value: 2 },
+            { label: '31–60 days', value: 11 },
+            { label: '61–90 days', value: 23 },
+            { label: '90+ days', value: 1 }
+          ];
+          var W = 420, H = 240, base = 200, max = 25;
+          var ink = v('--ink'), muted = v('--muted'), line = v('--line');
+          var bw = 62, step = W / rows.length;
+          var s = '<svg class="chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Bar chart of open applications by age. 23 of the 37 open applications are 61 to 90 days old.">';
+          [0, 10, 20].forEach(function (gv) {
+            var gy = base - (base - 24) * gv / max;
+            s += '<line x1="0" y1="' + gy + '" x2="' + W + '" y2="' + gy + '" stroke="' + line + '"/>';
+            s += '<text x="2" y="' + (gy - 4) + '" font-size="11" fill="' + muted + '">' + gv + '</text>';
+          });
+          rows.forEach(function (r, i) {
+            var h = (base - 24) * r.value / max;
+            var x = i * step + (step - bw) / 2;
+            var hot = r.label === '61–90 days';
+            s += '<rect x="' + x + '" y="' + (base - h) + '" width="' + bw + '" height="' + h + '" rx="4" fill="' + (hot ? v('--accent') : v('--bar')) + '"><title>' + r.label + ': ' + r.value + ' applications</title></rect>';
+            s += '<text x="' + (x + bw / 2) + '" y="' + (base - h - 8) + '" text-anchor="middle" font-size="15" font-weight="700" fill="' + ink + '">' + r.value + '</text>';
+            s += '<text x="' + (x + bw / 2) + '" y="' + (base + 22) + '" text-anchor="middle" font-size="12.5" fill="' + muted + '">' + r.label + '</text>';
+          });
+          s += '<line x1="0" y1="' + base + '" x2="' + W + '" y2="' + base + '" stroke="' + line + '" stroke-width="2"/>';
+          s += '</svg>';
+          document.getElementById('chart-aging').innerHTML = s;
+        })();
+
+        /* Chart 4 — monthly grouped bars */
+        (function () {
+          var months = [
+            { m: 'Jan', rec: 17, dec: 0 }, { m: 'Feb', rec: 19, dec: 0 },
+            { m: 'Mar', rec: 20, dec: 5 }, { m: 'Apr', rec: 18, dec: 15 },
+            { m: 'May', rec: 10, dec: 23 }, { m: 'Jun', rec: 0, dec: 20 },
+            { m: 'Jul', rec: 21, dec: 13 }, { m: 'Aug', rec: 13, dec: 6 },
+            { m: 'Sep', rec: 2, dec: 1 }
+          ];
+          var W = 720, H = 260, base = 218, max = 25;
+          var ink = v('--ink'), muted = v('--muted'), line = v('--line');
+          var step = W / months.length, bw = 24;
+          var s = '<svg class="chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Grouped bar chart of applications received versus decided by month, January to September 2026. Decisions lag intake by about two months; the most decisions happened in May with 23.">';
+          [0, 10, 20].forEach(function (gv) {
+            var gy = base - (base - 26) * gv / max;
+            s += '<line x1="0" y1="' + gy + '" x2="' + W + '" y2="' + gy + '" stroke="' + line + '"/>';
+            s += '<text x="2" y="' + (gy - 4) + '" font-size="11" fill="' + muted + '">' + gv + '</text>';
+          });
+          months.forEach(function (d, i) {
+            var cx = i * step + step / 2;
+            var rh = (base - 26) * d.rec / max, dh = (base - 26) * d.dec / max;
+            if (d.rec > 0) {
+              s += '<rect x="' + (cx - bw - 2) + '" y="' + (base - rh) + '" width="' + bw + '" height="' + rh + '" rx="3" fill="' + v('--accent') + '"><title>' + d.m + ' 2026 — received: ' + d.rec + '</title></rect>';
+              s += '<text x="' + (cx - bw / 2 - 2) + '" y="' + (base - rh - 6) + '" text-anchor="middle" font-size="12" font-weight="600" fill="' + ink + '">' + d.rec + '</text>';
+            } else {
+              s += '<text x="' + (cx - bw / 2 - 2) + '" y="' + (base - 6) + '" text-anchor="middle" font-size="12" fill="' + muted + '">0</text>';
+            }
+            if (d.dec > 0) {
+              s += '<rect x="' + (cx + 2) + '" y="' + (base - dh) + '" width="' + bw + '" height="' + dh + '" rx="3" fill="' + v('--bar') + '"><title>' + d.m + ' 2026 — decided: ' + d.dec + '</title></rect>';
+              s += '<text x="' + (cx + bw / 2 + 2) + '" y="' + (base - dh - 6) + '" text-anchor="middle" font-size="12" font-weight="600" fill="' + ink + '">' + d.dec + '</text>';
+            } else {
+              s += '<text x="' + (cx + bw / 2 + 2) + '" y="' + (base - 6) + '" text-anchor="middle" font-size="12" fill="' + muted + '">0</text>';
+            }
+            s += '<text x="' + cx + '" y="' + (base + 22) + '" text-anchor="middle" font-size="12.5" fill="' + muted + '">' + d.m + '</text>';
+          });
+          s += '<line x1="0" y1="' + base + '" x2="' + W + '" y2="' + base + '" stroke="' + line + '" stroke-width="2"/>';
+          s += '</svg>';
+          document.getElementById('chart-monthly').innerHTML = s;
+        })();
+
+        /* ---------- Stuck table ---------- */
+        var stuck = [
+          ['APP-0103', 'Quinn Davis, DO', 'Emergency Medicine', 'Peer References', 95],
+          ['APP-0105', 'Riley Patel, MD', 'Pediatrics', 'Primary-Source Verification', 72],
+          ['APP-0106', 'Skyler Hall, MD', 'Pediatrics', 'Completeness Review', 68],
+          ['APP-0187', 'Jordan Davis, DO', 'Anesthesiology', 'Completeness Review', 65],
+          ['APP-0188', 'Morgan Wilson, MD', 'Cardiology', 'Completeness Review', 60],
+          ['APP-0189', 'Casey Lewis, MD', 'Emergency Medicine', 'Completeness Review', 55],
+          ['APP-0190', 'Avery Nguyen, MD', 'Family Medicine', 'Completeness Review', 50],
+          ['APP-0191', 'Cameron Anderson, DO', 'General Surgery', 'Completeness Review', 48],
+          ['APP-0192', 'Reese Walker, MD', 'Neurology', 'Completeness Review', 45],
+          ['APP-0193', 'Parker Patel, MD', 'OB/GYN', 'Completeness Review', 43],
+          ['APP-0194', 'Drew Thomas, MD', 'Orthopedic Surgery', 'Completeness Review', 40],
+          ['APP-0195', 'Emerson Young, DO', 'Pediatrics', 'Completeness Review', 38],
+          ['APP-0196', 'Finley Hall, MD', 'Radiology', 'Primary-Source Verification', 35],
+          ['APP-0197', 'Harper Jackson, MD', 'Anesthesiology', 'Primary-Source Verification', 33],
+          ['APP-0198', 'Rowan King, MD', 'Cardiology', 'Primary-Source Verification', 31]
+        ];
+        var body = document.getElementById('stuck-body');
+        var countEl = document.getElementById('row-count');
+        function pillClass(step) {
+          if (step === 'Completeness Review') return 'review';
+          if (step === 'Primary-Source Verification') return 'verify';
+          return 'refs';
+        }
+        function renderTable(filter) {
+          var shown = stuck.filter(function (r) { return filter === 'all' || r[3] === filter; });
+          body.innerHTML = shown.map(function (r) {
+            return '<tr>' +
+              '<td class="id" data-label="Application">' + r[0] + '</td>' +
+              '<td class="provider" data-label="Provider">' + r[1] + '</td>' +
+              '<td data-label="Specialty">' + r[2] + '</td>' +
+              '<td data-label="Current step"><span class="step-pill ' + pillClass(r[3]) + '">' + r[3] + '</span></td>' +
+              '<td class="days num" data-label="Days stuck">' + r[4] + '</td>' +
+              '</tr>';
+          }).join('');
+          countEl.textContent = 'Showing ' + shown.length + ' of 15 applications';
+        }
+        document.getElementById('step-filter').addEventListener('change', function (e) { renderTable(e.target.value); });
+        renderTable('all');
+
+        /* Re-render charts if the system color scheme flips while the page is open */
+        if (window.matchMedia) {
+          var mq = window.matchMedia('(prefers-color-scheme: dark)');
+          if (mq.addEventListener) mq.addEventListener('change', function () { location.reload(); });
+        }
+      })();
+    </script>
+  </body>
+</html>
